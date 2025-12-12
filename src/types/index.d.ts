@@ -7,3 +7,8 @@ declare global {
         }
     }
 }
+
+export type Role = {
+    admin:'admin';
+    customer:'customer'
+}
