@@ -28,7 +28,7 @@ import { Pool } from "pg";
         `)
 
     await pool.query(`
-         CREATE TABLE IF NOT EXISTS bookings (
+         CREATE TABLE IF NOT EXISTS booking (
           id SERIAL PRIMARY KEY,
           customer_id INT REFERENCES users(id) ON DELETE CASCADE,
           vehicle_id INT REFERENCES vehicles(id) ON DELETE CASCADE,
