@@ -1,8 +1,18 @@
 import express from 'express'
+import initDB from './config/db.js'
+import { userRouter } from './modules/users/user.route.js'
 
 
 const app = express()
 app.use(express.json())
+
+
+initDB()
+
+// all api
+app.use('/api/v1/users', userRouter)
+
+
 
 
 app.get('/', (req, res) => {
