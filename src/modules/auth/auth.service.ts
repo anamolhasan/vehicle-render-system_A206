@@ -23,7 +23,7 @@ const signup = async (payload:Record<string, unknown>) => {
         RETURNING *
         `,[name, email, hashedPass, phone, role]
     )
-    // delete result.rows[0].password
+    delete result.rows[0].password
     return result.rows[0]
 }
 
@@ -53,7 +53,7 @@ const signIn = async (email:string, password:string) => {
         {expiresIn:'7d'}
     );
 
-    // delete result.rows[0].password
+    delete result.rows[0].password
     return {token, user:result}
 }
 
