@@ -1,7 +1,7 @@
 # Vehicle Rental Management System
 
 **Live Deployment:** 
-
+[Vehicle Rental Management System](https://vehicle-rental-system-a206.vercel.app/)
 
 ---
 
@@ -131,7 +131,7 @@ Auto Return Bookings: PUT /api/v1/bookings/auto-return (Admin)
 Submission
 
 ```bsh
-GitHub Repo: 
+GitHub Repo: https://github.com/anamolhasan/vehicle-render-system_A206
 
-Live Deployment: 
+Live Deployment: https://vehicle-rental-system-a206.vercel.app/
 ```
