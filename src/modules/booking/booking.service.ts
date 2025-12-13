@@ -1,4 +1,5 @@
 
+
 import { pool } from "../../config/db.js"
 import { role } from "../../utils/role.js"
 
@@ -166,8 +167,28 @@ const updateBooking = async (id:string, payload:any, user:any) => {
 
         return updated.rows[0]
     }
+    // == ADMIN RETURN
+    if(status === 'returned'){
+        if(user.role !== role.admin){
+            throw new Error("Only admin can return")
+        }
+
+        const updated = await pool.query(`
+            UPDATE booking SET status = 'returned' WHERE id=$1 RETURNING *
+            `, [id]
+        )
+
+        await pool.query(`
+            UPDATE vehicles SET availability_status='available' WHERE id=$1
+            `,[booking.vehicle_id]
+        )
+        return updated.rows[0]
+    }
+
     throw new Error('Invalid status update')
 }
+
+
 
 // -  auto return booking
 

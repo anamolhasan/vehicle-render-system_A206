@@ -13,7 +13,7 @@ This is a Vehicle Rental Management System built using **Node.js**, **Express**,
 
 ## Features
 
-- User Authentication (Signup & Signin)
+- User Authentication (Sign Up & Signin)
 - Role-based Access Control (Admin & Customer)
 - CRUD operations for Vehicles
 - Bookings management:

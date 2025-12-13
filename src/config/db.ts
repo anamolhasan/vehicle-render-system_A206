@@ -33,6 +33,7 @@ import { Pool } from "pg";
           customer_id INT REFERENCES users(id) ON DELETE CASCADE,
           vehicle_id INT REFERENCES vehicles(id) ON DELETE CASCADE,
           rent_start_date TIMESTAMP NOT NULL,
+          rent_end_date TIMESTAMP NOT NULL,
           total_price NUMERIC NOT NULL CHECK (total_price > 0),
           status TEXT NOT NULL CHECK (status IN ('active', 'cancelled', 'returned')),
           CONSTRAINT rent_date_check CHECK (rent_end_date > rent_start_date)
